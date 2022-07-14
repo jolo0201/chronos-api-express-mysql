@@ -44,7 +44,7 @@ app.post('/refreshtoken', (req, res) => {
   })
   
   function generateAccessToken(user) {
-    return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '30s' })
+    return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {  })
   }
   
 // set port, listen for requests

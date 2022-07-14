@@ -1,5 +1,5 @@
 GET http://localhost:8080/api/time/15/2022-07-13
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSmltIiwiaWF0IjoxNjU3Nzg3OTI3LCJleHAiOjE2NTc3ODc5NTd9.RSE-LED_JBSLs0ZgWv4w_WJ9m1cTbPy5_veRRi5BkxQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSkMiLCJpYXQiOjE2NTc4MTIxMTV9.hCCZWHfmr4HfGt-KxRHbQAi_QQ7fGaNHEleX3a5tFYM
 
 ###
 
@@ -7,7 +7,7 @@ DELETE http://localhost:9090/logout
 Content-Type: application/json
 
 {
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSmltIiwiaWF0IjoxNjU3Nzg3MjgxLCJleHAiOjE2NTc3ODczMTF9.ADIflUhy13jYmr8quEpR66AS2-ERrJa3fBj8I458lnI"
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSkMiLCJpYXQiOjE2NTc4MTIxMTV9.Yo_GeP3682o3c_NOZCvOHnQReXh29MvjIbg5msbXFvc"
 }
 
 ###
@@ -16,7 +16,7 @@ POST http://localhost:9090/refreshtoken
 Content-Type: application/json
 
 {
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSmltIiwiaWF0IjoxNjU3Nzg3ODgyfQ.UwlP-6dtfyw7wwAnlXCrS-39-JU22qzt-R_gJH19Ihw"
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSkMiLCJpYXQiOjE2NTc4MTIxMTV9.Yo_GeP3682o3c_NOZCvOHnQReXh29MvjIbg5msbXFvc"
 }
 
 ###
@@ -25,5 +25,5 @@ POST http://localhost:9090/login
 Content-Type: application/json
 
 {
-  "username": "Jim"
+  "username": "JC"
 }

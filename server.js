@@ -15,36 +15,47 @@ app.use(cors(corsOptions));
 app.use(express.json()); 
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
-
+// set port, listen for requests
+const PORT = process.env.PORT || 8080;
 // simple route
-app.get("/",authenticateToken, (req, res) => {
+app.get("/", authenticateToken, (req, res) => {
     res.json({ message: "Chronos API v1.0.0" });
 });
 
 const options = {
   definition: {
-      openapi: "3.0.0",
+      openapi: "3.0.3",
       info: {
           title: "Chronos API",
-          version: "1.0.0",
-          description: "Restful API for Chronos"
+          version: "1.0.1",
+          description: "Restful API for Chronos",
+          contact: {
+            name: "John Carlo Guevarra"
+          }
       },
       servers: [
           {
-              url: "http://localhost:8080"
+              url: `http://localhost:${PORT}`
           }
-      ]
+      ],
+      securitySchemes: {
+        bearerAuth: {
+            type: 'apiKey',
+            name: 'Authorization',
+            scheme: 'bearer',
+            in: 'header',
+        },
+    }
 },
   apis: ["./app/routes/*.js"]
 }
 
-const specs = swaggerJsDoc(options)
+const swaggerDocs = swaggerJsDoc(options)
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 
-app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(specs))
 timeRoutes(app);
 
-// set port, listen for requests
-const PORT = process.env.PORT || 8080;
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });

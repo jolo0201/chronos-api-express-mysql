@@ -19,7 +19,7 @@ Time.create = (newTime, result) => {
       result(err, null);
       return;
     }
-    result(null, { id: "Time successfully created", ...newTime });
+    result(null, { id: "Time log successfully created", ...newTime });
   });
 };
 
